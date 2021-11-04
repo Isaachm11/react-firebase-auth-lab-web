@@ -130,15 +130,19 @@ export default function Menu({ componenteAdicional, history }) {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItem button key="Dashboard">
+          <ListItem
+            button
+            key="Dashboard"
+            onClick={() => history.push("/dashboard")}
+          >
             <ListItemIcon>
-              <InboxIcon onClick={() => history.push('/dashboard')} />
+              <InboxIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
-          <ListItem button key="Log out">
+          <ListItem button key="Logout" onClick={() => history.push("/logout")}>
             <ListItemIcon>
-              <InboxIcon onClick={() => history.push('/logout')}/>
+              <InboxIcon />
             </ListItemIcon>
             <ListItemText primary="Log out" />
           </ListItem>

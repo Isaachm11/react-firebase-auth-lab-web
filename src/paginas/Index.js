@@ -11,8 +11,6 @@ export default function Index(props) {
   const firebase = getFirebase();
   const pathName = props.history.location.pathname;
 
-  console.log(pathName.includes("/"));
-
   const socialLogin = async (props) => {
     await firebase
       .auth()
@@ -79,7 +77,7 @@ export default function Index(props) {
     <Router>
       {props.currentUser ? (
         <Switch>
-          <Route exact path={"/"} render={() => <Menu />}></Route>
+          <Route exact path={"/"} render={() => <Menu history={props.history} />}></Route>
           <Route
             path={"/dashboard"}
             render={() => (
